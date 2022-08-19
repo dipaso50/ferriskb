@@ -10,32 +10,10 @@ enum layer_number {
     _NUMBER,
 };
 
-enum {
-    //TD_PARENTESIS_CAPS,
-    TD_QUOTES,
-    TD_TILDE,
-    TD_SLASH,
-    TD_COLONS,
-    TD_QUESTION,
-    TD_EXCLAMATION,
+enum {    
     TD_ESCQ
 };
 
-/**
-void dance_one(qk_tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1)
-        register_code16(ES_LPRN);
-    else
-        register_code16(ES_LBRC);
-}
-
-
-void dance_one_reset(qk_tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1)
-        unregister_code16(ES_LPRN);
-    else
-        unregister_code16(ES_LBRC);
-}**/
 
 qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_ESCQ] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
@@ -101,61 +79,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    TTT, TTT, TTT, TTT, TTT,                   KC_SCLN, ES_IEXL, ES_EXLM, TTT, TTT, 
                              TTT,  TTT, TTT, TTT ),
 
-
-
-
 };
 
-//layer_state_t layer_state_set_user(layer_state_t state) { return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST ); }
-
-
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-   
-    bool response = true;
-
-    /*switch(keycode){
-        case TILDE:
-            accent = true; 
-            tap_code16( KC_Z ); 
-            response = false;
-            break;
-        case KC_N:                
-            response = print_ene();
-            break;
-
-        case KC_A:
-        case KC_E:
-        case KC_I:
-        case KC_O:
-        case KC_U:
-            response = handle_accent(keycode);
-            break;
-
-        default:
-            return response;
-    }  */          
-    
-
-    return response;
-}
-
-
-
-bool print_ene(){
-    if (!accent) return true;
-
-    tap_code16( KC_SCLN );   
-    accent = false;
-    return false;
-}
-
-bool handle_accent(uint16_t keycode){
-    if (!accent) return true;
-
-     tap_code16( ES_ACUT );
-     tap_code16( keycode );
-     accent = false;
-     return false;
-}
 
