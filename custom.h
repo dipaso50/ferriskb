@@ -11,9 +11,5 @@ enum custom_keycodes {
     TILDE
 };
 
-static bool accent = false;
-
-bool print_ene( void );
-
-bool handle_accent(uint16_t keycode);
+	
 void interrupt_mods( void );
