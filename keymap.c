@@ -32,17 +32,21 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define KC_CPYP LGUI(LSFT(LCTL(KC_4))) // Copy portion of screen
 
 #define TD_Q_ESC TD(TD_ESCQ)
-#define TD_R_NAME TD(TD_RENAME) //rename variable or class in Intellij
-#define TD_IMPORTS TD(TD_ORG_IMPORTS) //organize imports in Intellj
-#define TD_GENERATE TD(TD_GENERATE)//generate code in IntelliJ
+
+#define KC_RENAME LSFT(KC_F6)
+#define KC_IMPORTS LALT(LCTL(KC_O))
+#define KC_GENERATE LGUI(KC_N)
+#define KC_COMPILE LGUI(KC_F9)
+#define KC_SEARCH LSG(KC_R)
+#define KC_OPEN LGUI(KC_O)
 
 #define TTT KC_TRNS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {  
 
 [_QWERTY] = LAYOUT( 
-    TD_Q_ESC, KC_W, KC_E, TD_R_NAME, LT(_MULTIMEDIA,KC_T),                  KC_Y, KC_U, KC_I, TD_IMPORTS, KC_P,     
-    KC_A, KC_S, KC_D, LT(_TILDE, KC_F), TD_GENERATE,                        KC_H, LT(_NUMBER, KC_J), KC_K, KC_L, KC_BSPC,    
+    TD_Q_ESC, KC_W, KC_E, KC_R, LT(_MULTIMEDIA,KC_T),                       KC_Y, KC_U, KC_I, KC_O, KC_P,     
+    KC_A, KC_S, KC_D, LT(_TILDE, KC_F), KC_G,                               KC_H, LT(_NUMBER, KC_J), KC_K, KC_L, KC_BSPC,    
     LCTL_T(KC_Z), LGUI_T(KC_X), LALT_T(KC_C), LSFT_T(KC_V), KC_B,           KC_N , RSFT_T(KC_M), RALT_T(KC_COMM), RGUI_T(KC_DOT), LCTL_T(KC_SLSH),    
                                    KC_TAB , LT(_RAISE, KC_SPC), LT(_LOWER, KC_ENT), OSM(MOD_RGUI)),
 
@@ -59,8 +63,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                        ES_PIPE, ES_PERC, TTT, TTT),
 
 [_RAISE] = LAYOUT(    
-     TTT, TTT, TTT, TTT, KC_DEL,                                            TTT, KC_PGDN, KC_PGUP, KC_HOME, KC_END,    
-     TTT, LSG(KC_R), LGUI(KC_O), LGUI(KC_F9), KC_CAPS,                      KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS,    
+     TTT, KC_GENERATE, KC_IMPORTS, KC_RENAME, KC_DEL,                       TTT, KC_PGDN, KC_PGUP, KC_HOME, KC_END,    
+     TTT, KC_SEARCH, KC_OPEN, KC_COMPILE, KC_CAPS,                          KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS,    
      TTT, TTT, TTT, TTT, TTT,                                               TTT, KC_RSFT, ES_SCLN, ES_COLN, LCTL_T(ES_UNDS),    
                                        TTT, TTT, KC_PSCR, TTT),
 
