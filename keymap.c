@@ -33,13 +33,15 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define KC_COMPILE LGUI(KC_F9)
 #define KC_SEARCH LSG(KC_R)
 #define KC_OPEN LGUI(KC_O)
+#define KC_BACK LGUI(ES_LBRC)
+#define KC_NEXT LGUI(ES_RBRC)
 
 #define TTT KC_TRNS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {  
 
 [_QWERTY] = LAYOUT( 
-    TD_Q_ESC, KC_W, KC_E, KC_R, LT(_MULTIMEDIA,KC_T),                                 KC_Y, KC_U, KC_I, KC_O, KC_P,   
+    KC_Q, KC_W, KC_E, KC_R, LT(_MULTIMEDIA,KC_T),                                 KC_Y, KC_U, KC_I, KC_O, KC_P,   
     LCTL_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LSFT_T(KC_F), LT(_TILDE,KC_G),          LT(_NUMBER,KC_H) , RSFT_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), LCTL_T(KC_BSPC),   
     KC_Z, KC_X, KC_C, KC_V, KC_B,                                                     KC_N , KC_M, KC_COMM, KC_DOT, KC_SLSH,    
                                    MT(MOD_RGUI, KC_TAB) , LT(_RAISE, KC_SPC), LT(_LOWER, KC_ENT), OSM(MOD_RGUI)),
@@ -57,9 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                        ES_PIPE, ES_PERC, TTT, TTT),
 
 [_RAISE] = LAYOUT(    
-     TTT, KC_GENERATE, KC_IMPORTS, KC_RENAME, KC_DEL,                       KC_HOME, KC_PGDN, KC_PGUP, KC_END, TTT,    
-     TTT, TTT, TTT, TTT, KC_CAPS,                                           KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS,    
-     TTT, KC_SEARCH, KC_OPEN, KC_COMPILE, TTT,                              TTT, KC_RSFT, ES_SCLN, ES_COLN, LCTL_T(ES_UNDS),    
+     TTT, KC_GENERATE, KC_IMPORTS, KC_RENAME,  KC_DEL,                       KC_HOME, KC_PGDN, KC_PGUP, KC_END, TTT,    
+     TTT, TTT        , KC_BACK,    KC_NEXT,    KC_ESC,                                   KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS,    
+     TTT, KC_SEARCH  , KC_OPEN,    KC_COMPILE, KC_CAPS,                              TTT, KC_RSFT, ES_SCLN, ES_COLN, LCTL_T(ES_UNDS),    
                                        TTT, TTT, TTT, TTT),
 
   [_TILDE] = LAYOUT( 
