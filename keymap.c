@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_RAISE] = LAYOUT(    
      TTT, KC_GENERATE, KC_IMPORTS, KC_RENAME,  KC_DEL,                       KC_HOME, KC_PGDN, KC_PGUP, KC_END, TTT,    
-     TTT, TTT        , KC_BACK,    KC_NEXT,    KC_ESC,                                   KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS,    
+     TTT, TTT        , KC_BACK,    KC_NEXT,    KC_ESC,                       KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS,    
      TTT, KC_SEARCH  , KC_OPEN,    KC_COMPILE, KC_CAPS,                              TTT, KC_RSFT, ES_SCLN, ES_COLN, LCTL_T(ES_UNDS),    
                                        TTT, TTT, TTT, TTT),
 
