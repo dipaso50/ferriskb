@@ -38,6 +38,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_FORCE_HOLD
 
+//wake up issue on mac https://github.com/qmk/qmk_firmware/issues/17316
+#define USB_SUSPEND_WAKEUP_DELAY 200
+
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
   #define RGBLIGHT_ANIMATIONS
