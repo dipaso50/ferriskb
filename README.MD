@@ -7,3 +7,4 @@ make ferris/sweep:diegoDefault:dfu-split-right
 qmk build -kb ferris/sweep -kb diegoDefault
 qmk compile -kb ferris/sweep -kb diegoDefault
 
+
